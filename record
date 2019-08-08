@@ -1,1 +1,13 @@
-gitlab mysql:https://lessmind.github.io/2016/11/18/gitlab-ce-omnibus-package-with-mysql/
+1. 简单ocr
+sudo yum install tesseract
+sudo yum install tesseract-langpack-chi_sim.noarch
+sudo python3 -m pip install pytesseract
+from PIL import Image
+import pytesseract
+image = Image.open('1603448075.jpg')
+text = pytesseract.image_to_string(image,lang='chi_sim')
+
+2. 汉字转拼音
+sudo python3 -m pip install pinyin
+import pinyin
+pinyin.get('产品技术', format='strip')
